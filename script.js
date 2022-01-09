@@ -6,6 +6,7 @@ let topPos2 = 50;
 let leftPos2 = 50;
 let topPosT = Math.floor(Math.random() * (95 - 5) + 5);
 let leftPosT = Math.floor(Math.random() * (95 - 5) + 5);
+let play = false;
 target.style.top = topPosT + '%';
 target.style.left = leftPosT + '%';
 
@@ -30,107 +31,110 @@ let checker = () => {
     }
 };
 
-document.body.onkeyup = function(e) {
-    console.log(e.keyCode);
-    if (e.keyCode === 38) {
-        topPos1--;
-        if(topPos1 <= 5) {
-            player1.style.display = 'none';
-            topPos1 = 95;
-            player1.style.top = topPos1 + '%';
-            setTimeout(function () {
-                player1.style.display = 'block';
-            }, 50)
-        } else {
-            player1.style.top = topPos1 + '%';
-        }
-    } else if (e.keyCode === 40) {
-        topPos1++;
-        if(topPos1 >= 95) {
-            player1.style.display = 'none';
-            topPos1 = 5;
-            player1.style.top = topPos1 + '%';
-            setTimeout(function () {
-                player1.style.display = 'block';
-            }, 50)
-        } else {
-            player1.style.top = topPos1 + '%';
-        }
-    } else if (e.keyCode === 37) {
-        leftPos1--;
-        if(leftPos1 <= 5) {
-            player1.style.display = 'none';
-            leftPos1 = 95;
-            player1.style.left = leftPos1 + '%';
-            setTimeout(function () {
-                player1.style.display = 'block';
-            }, 50)
-        } else {
-            player1.style.left = leftPos1 + '%';
-        }
-    } else if (e.keyCode === 39) {
-        leftPos1++;
-        if(leftPos1 >= 95) {
-            player1.style.display = 'none';
-            leftPos1 = 5;
-            player1.style.left = leftPos1 + '%';
-            setTimeout(function () {
-                player1.style.display = 'block';
-            }, 50)
-        } else {
-            player1.style.left = leftPos1 + '%';
-        }
-    } else if (e.keyCode === 87) {
-        topPos2--;
-        if(topPos2 <= 5) {
-            player2.style.display = 'none';
-            topPos2 = 95;
-            player2.style.top = topPos2 + '%';
-            setTimeout(function () {
-                player2.style.display = 'block';
-            }, 50)
-        } else {
-            player2.style.top = topPos2 + '%';
-        }
-    } else if (e.keyCode === 83) {
-        topPos2++;
-        if(topPos2 >= 95) {
-            player2.style.display = 'none';
-            topPos2 = 5;
-            player2.style.top = topPos2 + '%';
-            setTimeout(function () {
-                player2.style.display = 'block';
-            }, 50)
-        } else {
-            player2.style.top = topPos2 + '%';
-        }
-    } else if (e.keyCode === 65) {
-        leftPos2--;
-        if(leftPos2 <= 5) {
-            player2.style.display = 'none';
-            leftPos2 = 95;
-            player2.style.left = leftPos2 + '%';
-            setTimeout(function () {
-                player2.style.display = 'block';
-            }, 50)
-        } else {
-            player2.style.left = leftPos2 + '%';
-        }
-    } else if (e.keyCode === 68) {
-        leftPos2++;
-        if(leftPos2 >= 95) {
-            player2.style.display = 'none';
-            leftPos2 = 5;
-            player2.style.left = leftPos2 + '%';
-            setTimeout(function () {
-                player2.style.display = 'block';
-            }, 50)
-        } else {
-            player2.style.left = leftPos2 + '%';
-        }
-    }
-    checker();
-};
+let PVPStart = () => {
+    if (play === true) {
+        document.body.onkeyup = function(e) {
+            if (e.keyCode === 38) {
+                topPos1--;
+                if(topPos1 <= 5) {
+                    player1.style.display = 'none';
+                    topPos1 = 95;
+                    player1.style.top = topPos1 + '%';
+                    setTimeout(function () {
+                        player1.style.display = 'block';
+                    }, 50)
+                } else {
+                    player1.style.top = topPos1 + '%';
+                }
+            } else if (e.keyCode === 40) {
+                topPos1++;
+                if(topPos1 >= 95) {
+                    player1.style.display = 'none';
+                    topPos1 = 5;
+                    player1.style.top = topPos1 + '%';
+                    setTimeout(function () {
+                        player1.style.display = 'block';
+                    }, 50)
+                } else {
+                    player1.style.top = topPos1 + '%';
+                }
+            } else if (e.keyCode === 37) {
+                leftPos1--;
+                if(leftPos1 <= 5) {
+                    player1.style.display = 'none';
+                    leftPos1 = 95;
+                    player1.style.left = leftPos1 + '%';
+                    setTimeout(function () {
+                        player1.style.display = 'block';
+                    }, 50)
+                } else {
+                    player1.style.left = leftPos1 + '%';
+                }
+            } else if (e.keyCode === 39) {
+                leftPos1++;
+                if(leftPos1 >= 95) {
+                    player1.style.display = 'none';
+                    leftPos1 = 5;
+                    player1.style.left = leftPos1 + '%';
+                    setTimeout(function () {
+                        player1.style.display = 'block';
+                    }, 50)
+                } else {
+                    player1.style.left = leftPos1 + '%';
+                }
+            } else if (e.keyCode === 87) {
+                topPos2--;
+                if(topPos2 <= 5) {
+                    player2.style.display = 'none';
+                    topPos2 = 95;
+                    player2.style.top = topPos2 + '%';
+                    setTimeout(function () {
+                        player2.style.display = 'block';
+                    }, 50)
+                } else {
+                    player2.style.top = topPos2 + '%';
+                }
+            } else if (e.keyCode === 83) {
+                topPos2++;
+                if(topPos2 >= 95) {
+                    player2.style.display = 'none';
+                    topPos2 = 5;
+                    player2.style.top = topPos2 + '%';
+                    setTimeout(function () {
+                        player2.style.display = 'block';
+                    }, 50)
+                } else {
+                    player2.style.top = topPos2 + '%';
+                }
+            } else if (e.keyCode === 65) {
+                leftPos2--;
+                if(leftPos2 <= 5) {
+                    player2.style.display = 'none';
+                    leftPos2 = 95;
+                    player2.style.left = leftPos2 + '%';
+                    setTimeout(function () {
+                        player2.style.display = 'block';
+                    }, 50)
+                } else {
+                    player2.style.left = leftPos2 + '%';
+                }
+            } else if (e.keyCode === 68) {
+                leftPos2++;
+                if(leftPos2 >= 95) {
+                    player2.style.display = 'none';
+                    leftPos2 = 5;
+                    player2.style.left = leftPos2 + '%';
+                    setTimeout(function () {
+                        player2.style.display = 'block';
+                    }, 50)
+                } else {
+                    player2.style.left = leftPos2 + '%';
+                }
+            }
+            checker();
+        };
+    };
+}
 
 document.getElementById("main-wrap").onfocus = function () {
     document.getElementById("audio1").play();
@@ -153,22 +157,35 @@ document.getElementById('main__btn').onclick = function () {
         document.getElementById('main-wrap').style.display = 'none';
         document.getElementById('pvp-mode-wrap').style.display = 'block';
     }, 550)
-};
-
-document.getElementById("main__settings").onclick = function () {
-    document.getElementById("main-wrap").style.filter = 'blur(10px)';
-    document.getElementById("main__settings_sets").style.display = 'block';
-    document.getElementById("settings-frame").style.display = 'flex';
-    document.getElementById("main__settings").style.display = 'none';
+    play = true;
+    PVPStart();
 };
 
 document.getElementById('main-wrap').onmousemove = function () {
     document.getElementById('audio1').play();
 };
 
+document.getElementById("main__settings").onclick = function () {
+    document.getElementById("main-wrap").style.filter = 'blur(10px)';
+    document.getElementById("main__settings_sets").style.display = 'block';
+    document.getElementById("settings-frame").style.display = 'flex';
+    document.getElementById("settings-frame").style.animation = 'menu-show 1s 1';
+    document.getElementById("main__settings").style.display = 'none';
+    setTimeout(function () {
+        document.getElementById("settings__inner").style.display = 'flex';
+        document.getElementById("settings-frame").style.animation = '';
+    }, 1050)
+};
+
 document.getElementById("main__settings_sets").onclick = function () {
-    document.getElementById("main-wrap").style.filter = 'blur(0px)';
+    document.getElementById("main-wrap").style.filter = 'blur(0)';
     document.getElementById("main__settings_sets").style.display = 'none';
-    document.getElementById("settings-frame").style.display = 'none';
-    document.getElementById("main__settings").style.display = 'block';
+    document.getElementById("main__settings").style.display = 'flex';
+    document.getElementById("settings-frame").style.animation = 'menu-hide 1s 1';
+    document.getElementById("settings__inner").style.display = 'none';
+    document.getElementById("main__settings").style.display = 'flex';
+    setTimeout(function () {
+        document.getElementById("settings-frame").style.animation = '';
+        document.getElementById("settings-frame").style.display = 'none';
+    }, 1000)
 };
