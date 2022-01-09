@@ -16,7 +16,7 @@ let setNewTargetPos = function() {
     console.log('left pos ' + leftPosT)
     target.style.top = topPosT + '%';
     target.style.left = leftPosT + '%';
-}
+};
 
 let checker = () => {
     if (topPos1 === topPosT && leftPos1 === leftPosT) {
@@ -28,7 +28,7 @@ let checker = () => {
         scoreOf2++;
         score2.innerText = scoreOf2;
     }
-}
+};
 
 document.body.onkeyup = function(e) {
     console.log(e.keyCode);
@@ -130,21 +130,21 @@ document.body.onkeyup = function(e) {
         }
     }
     checker();
-}
+};
 
 document.getElementById("main-wrap").onfocus = function () {
     document.getElementById("audio1").play();
     document.getElementById("audio1").volume = 0.3;
-}
+};
 
 document.getElementById("main-wrap").onblur = function () {
     document.getElementById("audio1").pause();
     document.getElementById("audio1").volume = 0.3;
-}
+};
 
 document.getElementById('customRange1 music-volume').onchange = function () {
     document.getElementById('audio1').volume = document.getElementById('customRange1 music-volume').value / 100;
-}
+};
 
 document.getElementById('main__btn').onclick = function () {
     document.getElementById('main__btn').style.animation = 'btnclick .5s 1';
@@ -153,18 +153,18 @@ document.getElementById('main__btn').onclick = function () {
         document.getElementById('main-wrap').style.display = 'none';
         document.getElementById('pvp-mode-wrap').style.display = 'block';
     }, 550)
-}
+};
 
 document.getElementById("main__settings").onclick = function () {
     document.getElementById("main-wrap").style.filter = 'blur(10px)';
     document.getElementById("main__settings_sets").style.display = 'block';
     document.getElementById("settings-frame").style.display = 'flex';
     document.getElementById("main__settings").style.display = 'none';
-}
+};
 
 document.getElementById("main__settings_sets").onclick = function () {
     document.getElementById("main-wrap").style.filter = 'blur(0px)';
     document.getElementById("main__settings_sets").style.display = 'none';
     document.getElementById("settings-frame").style.display = 'none';
     document.getElementById("main__settings").style.display = 'block';
-}
+};
