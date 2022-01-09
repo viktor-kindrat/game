@@ -131,3 +131,12 @@ document.body.onkeyup = function(e) {
     }
     checker();
 }
+
+document.getElementById('main__btn').onclick = function () {
+    document.getElementById('main__btn').style.animation = 'btnclick .5s 1';
+    let x = setTimeout(function () {
+        document.getElementById('main__btn').style.animation = 'none';
+        document.getElementById('main-wrap').style.display = 'none';
+        document.getElementById('pvp-mode-wrap').style.display = 'block';
+    }, 550)
+}
