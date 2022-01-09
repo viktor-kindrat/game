@@ -162,6 +162,10 @@ document.getElementById("main__settings").onclick = function () {
     document.getElementById("main__settings").style.display = 'none';
 };
 
+document.getElementById('main-wrap').onmousemove = function () {
+    document.getElementById('audio1').play();
+};
+
 document.getElementById("main__settings_sets").onclick = function () {
     document.getElementById("main-wrap").style.filter = 'blur(0px)';
     document.getElementById("main__settings_sets").style.display = 'none';
