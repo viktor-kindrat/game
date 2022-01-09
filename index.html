@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Changa:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -14,7 +16,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="body">
+
+<!--    main wrap-->
+
     <div class="main-wrap" id="main-wrap">
+        <audio id="audio1" src="./background-sound.mp3" autoplay></audio>
+        <button type="button" class="main__settings" id="main__settings"><img src="./btns-set/settings.svg" alt="⚙Sets"></button>
         <div class="main__text-group">
             <h1 class="main__headline">Catch the circle!</h1>
             <p class="main__description">
@@ -23,6 +30,35 @@
         </div>
         <button type="button" class="main__btn" id="main__btn">Play</button>
     </div>
+
+<!--    settings-->
+
+    <button type="button" class="main__settings__sets" id="main__settings_sets"><img src="./btns-set/settings.svg" alt="⚙Sets"></button>
+    <div class="settings-frame" id="settings-frame">
+        <h2 class="settings__headline">Settings:</h2>
+        <div class="language-change">
+            <button type="button" class="language-change__left"><img class="imgg" src="./btns-set/left.svg" alt="&leftarrow;"></button>
+            <div class="language-change__flag"></div>
+            <button type="button" class="language-change__right"><img class="imgg" src="./btns-set/right.svg" alt="&rightarrow;"></button>
+        </div>
+
+        <div class="volume-change">
+            <p class="volume-change__headline">Volume</p>
+            <div class="volume-change__row">
+                <div class="volume-change__group">
+                    <div class="volume-change__description">Music</div>
+                    <input min="0" max="100" value="30" type="range" class="form-range volume" id="customRange1 music-volume">
+                </div>
+                <div class="volume-change__group">
+                    <div class="volume-change__description">Sounds</div>
+                    <input min="0" max="100" value="50" type="range" class="form-range volume" id="customRange1 sounds-volume">
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--    pvp-->
+
     <div class="pvp-mode-wrap" id='pvp-mode-wrap'>
         <div class="score">
             <div class="score__score1" id="score1">0</div>

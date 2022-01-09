@@ -30,6 +30,23 @@
     background-size: cover;
 }
 
+.main__settings {
+    max-width: 100px;
+    max-height: 100px;
+    border: none;
+    outline: none;
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    background: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .main__text-group {
     text-align: center;
     display: flex;
@@ -102,6 +119,88 @@
 .main__btn:hover {
     background: #eed271;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2), inset 0px 0px 5px rgba(80, 80, 80, 0.3);
+}
+
+.main__settings__sets {
+    position: fixed;
+    background: transparent;
+    border: none;
+    outline: none;
+    top: 50px;
+    right: 50px;
+    margin: 10px;
+    display: none;
+}
+
+.settings-frame {
+    min-width: 60vw;
+    min-height: 400px;
+    padding: 32px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    position: fixed;
+    background: rgba(147, 255, 216, 0.48);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25), inset 0px 0px 10px rgba(0, 41, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    color: #ffffff;
+}
+
+.settings__headline {
+    font-weight: 400;
+    font-size: 50px;
+}
+
+.language-change {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: flex-start;
+    gap: 10px;
+}
+
+.language-change__flag {
+    width: 106px;
+    height: 71px;
+    border-radius: 5px;
+    background: url("./languages-sets/english.svg") center center;
+    background-size: contain;
+}
+
+.language-change__left, .language-change__right {
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.language-change__right .imgg {
+    width: 30px;
+}
+
+.language-change__left .imgg {
+    width: 30px;
+}
+
+.volume-change {
+    align-self: flex-start;
+    gap: 32px;
+}
+
+.volume {
+    width: 250px;
+}
+
+.volume-change__row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 32px;
 }
 
 .pvp-mode-wrap {
