@@ -166,6 +166,7 @@ document.getElementById('main-wrap').onmousemove = function () {
 };
 
 document.getElementById("main__settings").onclick = function () {
+    document.getElementById("main-wrap").style.transition = '0.3s';
     document.getElementById("main-wrap").style.filter = 'blur(10px)';
     document.getElementById("main__settings_sets").style.display = 'block';
     document.getElementById("settings-frame").style.display = 'flex';
@@ -174,11 +175,10 @@ document.getElementById("main__settings").onclick = function () {
     setTimeout(function () {
         document.getElementById("settings__inner").style.display = 'flex';
         document.getElementById("settings-frame").style.animation = '';
-    }, 1050)
+    }, 990)
 };
 
 document.getElementById("main__settings_sets").onclick = function () {
-    document.getElementById("main-wrap").style.filter = 'blur(0)';
     document.getElementById("main__settings_sets").style.display = 'none';
     document.getElementById("main__settings").style.display = 'flex';
     document.getElementById("settings-frame").style.animation = 'menu-hide 1s 1';
@@ -186,6 +186,7 @@ document.getElementById("main__settings_sets").onclick = function () {
     document.getElementById("main__settings").style.display = 'flex';
     setTimeout(function () {
         document.getElementById("settings-frame").style.animation = '';
+        document.getElementById("main-wrap").style.filter = 'blur(0)';
         document.getElementById("settings-frame").style.display = 'none';
-    }, 1000)
+    }, 990)
 };
