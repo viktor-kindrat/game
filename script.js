@@ -10,6 +10,8 @@ let play = false;
 target.style.top = topPosT + '%';
 target.style.left = leftPosT + '%';
 
+document.getElementById('audio1').volume = 0.3;
+
 let setNewTargetPos = function() {
     topPosT = Math.floor(Math.random() * (95 - 5) + 5);
     leftPosT = Math.floor(Math.random() * (95 - 5) + 5);
