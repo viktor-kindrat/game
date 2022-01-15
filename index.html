@@ -19,7 +19,7 @@
 
 <!--    main wrap-->
 
-    <div class="main-wrap" id="main-wrap">
+    <main class="main-wrap" id="main-wrap">
         <audio autoplay loop id="audio1">
             <source src="background-sound.mp3" type="audio/ogg">
         </audio>
@@ -31,7 +31,7 @@
             </p>
         </div>
         <button type="button" class="main__btn" id="main__btn">Play</button>
-    </div>
+    </main>
 
 <!--    settings-->
 
@@ -61,9 +61,74 @@
         </div>
     </div>
 
+<!--    choose game-mode-->
+
+<div class="game-mode-frame" id="game-mode">
+    <section class="game-mode__inner" id="game-mode__inner" style="display: none">
+        <h2 class="game-mode__headline">Choose the game mode:</h2>
+        <div class="game-mode__cards">
+            <div class="game-mode__card" id="game-mode-checkbox game-mode_1">
+                <img src="./game-mode-sets/normal.svg" alt="normal-mode" class="game-mode__image">
+                <p class="game-mode__text">Normal</p>
+            </div>
+            <div class="game-mode__card" id="game-mode-checkbox game-mode_2">
+                <img src="./game-mode-sets/pacman.svg" alt="pac-man-mode" class="game-mode__image">
+                <p class="game-mode__text">Pac-man</p>
+            </div>
+            <div class="game-mode__card" id="game-mode-checkbox game-mode_3">
+                <img src="./game-mode-sets/pvp.svg" alt="pvp-mode" class="game-mode__image">
+                <p class="game-mode__text">PVP</p>
+            </div>
+            <div class="game-mode__card" id="game-mode-checkbox game-mode_4">
+                <img src="./game-mode-sets/timeout.svg" alt="timeout-mode" class="game-mode__image">
+                <p class="game-mode__text">Timeout</p>
+            </div>
+        </div>
+    </section>
+    <section class="game-mode__inner-skins" id="game-mode__inner-skins">
+        <h2 class="game-mode__headline">Fill out your profile(-s):</h2>
+        <div class="players__info">
+            <div class="skins__player skins__player1">
+                <div class="skins__choose-skin">
+                    <div class="skins__skin skins__skin1" id="player1 skin-id1"></div>
+                    <div class="skins__skin skins__skin2" id="player1 skin-id2"></div>
+                    <div class="skins__skin skins__skin3" id="player1 skin-id3"></div>
+                    <div class="skins__skin skins__skin4" id="player1 skin-id4"></div>
+                    <div class="skins__skin skins__skin5" id="player1 skin-id5"></div>
+                    <div class="skins__skin skins__skin6" id="player1 skin-id6"></div>
+                    <div class="skins__skin skins__skin7" id="player1 skin-id7"></div>
+                    <div class="skins__skin skins__skin8" id="player1 skin-id8"></div>
+                    <div class="skins__skin skins__skin9" id="player1 skin-id9"></div>
+                    <div class="skins__skin skins__skin10" id="player1 skin-id10"></div>
+                    <div class="skins__skin skins__skin11" id="player1 skin-id11"></div>
+                    <div class="skins__skin skins__skin12" id="player1 skin-id12"></div>
+                </div>
+                <span class="player__information-group"><input placeholder="Player 1" type="text" id="player-1-name" class="players__input"><button type="button" id="player-1-ready" class="players__ready-btn"> </span>
+            </div>
+            <div class="skins__player skins__player2">
+                <div class="skins__choose-skin">
+                    <div class="skins__skin skins__skin1" id="player2 skin-id1"></div>
+                    <div class="skins__skin skins__skin2" id="player2 skin-id2"></div>
+                    <div class="skins__skin skins__skin3" id="player2 skin-id3"></div>
+                    <div class="skins__skin skins__skin4" id="player2 skin-id4"></div>
+                    <div class="skins__skin skins__skin5" id="player2 skin-id5"></div>
+                    <div class="skins__skin skins__skin6" id="player2 skin-id6"></div>
+                    <div class="skins__skin skins__skin7" id="player2 skin-id7"></div>
+                    <div class="skins__skin skins__skin8" id="player2 skin-id8"></div>
+                    <div class="skins__skin skins__skin9" id="player2 skin-id9"></div>
+                    <div class="skins__skin skins__skin10" id="player2 skin-id10"></div>
+                    <div class="skins__skin skins__skin11" id="player2 skin-id11"></div>
+                    <div class="skins__skin skins__skin12" id="player2 skin-id12"></div>
+                </div>
+                <span class="player__information-group"><input placeholder="Player 2" type="text" id="player-2-name" class="players__input" placeholder=""><button type="button" id="player-2-ready" class="players__ready-btn"> </span>
+            </div>
+        </div>
+    </section>
+</div>
+
 <!--    pvp-->
 
-    <div class="pvp-mode-wrap" id='pvp-mode-wrap'>
+    <main class="pvp-mode-wrap" id='pvp-mode-wrap'>
         <div class="score">
             <div class="score__score1" id="score1">0</div>
             <div class="score__score2" id="score2">0</div>
@@ -71,7 +136,7 @@
         <div class="player player1" id="player1"></div>
         <div class="player player2" id="player2"></div>
         <div class="player target" id='target'></div>
-    </div>
+    </main>
     <script src="script.js"></script>
 </body>
 </html>

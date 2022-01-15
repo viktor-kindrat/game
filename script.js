@@ -9,6 +9,9 @@ let leftPosT = Math.floor(Math.random() * (95 - 5) + 5);
 let play = false;
 target.style.top = topPosT + '%';
 target.style.left = leftPosT + '%';
+let IsReadyPlayer1 = false;
+let IsReadyPlayer2 = false;
+let chooseMode = "";
 
 document.getElementById('audio1').volume = 0.3;
 
@@ -26,7 +29,7 @@ let checker = () => {
         setNewTargetPos();
         scoreOf1++;
         score1.innerText = scoreOf1;
-    } else if (topPos2 == topPosT && leftPos2 === leftPosT) {
+    } else if (topPos2 === topPosT && leftPos2 === leftPosT) {
         setNewTargetPos();
         scoreOf2++;
         score2.innerText = scoreOf2;
@@ -34,6 +37,10 @@ let checker = () => {
 };
 
 let PVPStart = () => {
+    play = true;
+    document.getElementById("main-wrap").style.display = 'none';
+    document.getElementById("game-mode").style.display = 'none';
+    document.getElementById("pvp-mode-wrap").style.display = 'block';
     if (play === true) {
         document.body.onkeyup = function(e) {
             if (e.keyCode === 38) {
@@ -135,7 +142,9 @@ let PVPStart = () => {
             }
             checker();
         };
-    };
+    } else {
+        document.body.onkeyup = function() {}
+    }
 }
 
 document.getElementById("main-wrap").onfocus = function () {
@@ -155,12 +164,24 @@ document.getElementById('customRange1 music-volume').onchange = function () {
 document.getElementById('main__btn').onclick = function () {
     document.getElementById('main__btn').style.animation = 'btnclick .5s 1';
     let x = setTimeout(function () {
+        document.getElementById("main-wrap").style.filter = 'blur(10px)'
+        document.getElementById("game-mode").style.display = 'flex';
+        document.getElementById("game-mode").style.animation = 'game-mode 1s 1';
+        setTimeout(function () {
+            document.getElementById("game-mode__inner").style.display = 'flex';
+            document.getElementById("main-wrap").onclick = function () {
+                document.getElementById("game-mode__inner").style.visibility = 'hidden';
+                document.getElementById("game-mode").style.animation = 'game-mode-hide 1s 1';
+                setTimeout(function () {
+                    document.getElementById("game-mode").style.display = 'none';
+                    document.getElementById("main-wrap").style.filter = 'blur(0px)'
+                    document.getElementById("game-mode").style.animation = '';
+                    document.getElementById("main-wrap").onclick = function () {};
+                }, 999)
+            }
+        }, 999)
         document.getElementById('main__btn').style.animation = 'none';
-        document.getElementById('main-wrap').style.display = 'none';
-        document.getElementById('pvp-mode-wrap').style.display = 'block';
     }, 550)
-    play = true;
-    PVPStart();
 };
 
 document.getElementById('main-wrap').onmousemove = function () {
@@ -192,3 +213,61 @@ document.getElementById("main__settings_sets").onclick = function () {
         document.getElementById("settings-frame").style.display = 'none';
     }, 990)
 };
+
+let openSkins = () => {
+    document.getElementById("game-mode__inner").style.display = 'none';
+    document.getElementById("game-mode__inner-skins").style.display = 'flex';
+}
+
+let changeCheckboxStatus = (checkboxId) => {
+    document.getElementById(checkboxId).style.backgroundImage = "url(./btns-set/ready.svg)"
+}
+
+document.getElementById("player-1-ready").onclick = function () {
+    IsReadyPlayer1 = true;
+    changeCheckboxStatus("player-1-ready");
+    if (IsReadyPlayer1 === true && IsReadyPlayer2 === true) {
+        if (chooseMode === "normal") {
+            alert("Mode in development! Deploy is planed for 16.01.2022 to 31.01.2022")
+        } else if (chooseMode === "pac-man"){
+            alert("Mode in development! Deploy is planed for 16.01.2022 to 31.01.2022")
+        } else if (chooseMode === "pvp"){
+            PVPStart();
+        } else if (chooseMode === "timeout") {
+            alert("Mode in development! Deploy is planed for 16.01.2022 to 31.01.2022")
+        }
+    }
+}
+
+document.getElementById("player-2-ready").onclick = function () {
+    IsReadyPlayer2 = true;
+    changeCheckboxStatus("player-2-ready");
+    if (IsReadyPlayer1 === true && IsReadyPlayer2 === true) {
+        if (chooseMode === "normal") {
+            alert("Mode in development! Deploy is planed for 16.01.2022 to 31.01.2022")
+        } else if (chooseMode === "pac-man"){
+            alert("Mode in development! Deploy is planed for 16.01.2022 to 31.01.2022")
+        } else if (chooseMode === "pvp"){
+            PVPStart();
+        } else if (chooseMode === "timeout") {
+            alert("Mode in development! Deploy is planed for 16.01.2022 to 31.01.2022")
+        }
+    }
+}
+
+document.getElementById('game-mode-checkbox game-mode_1').onclick = function () {
+    openSkins();
+    chooseMode = "normal";
+}
+document.getElementById('game-mode-checkbox game-mode_2').onclick = function () {
+    openSkins();
+    chooseMode = "pac-man";
+}
+document.getElementById('game-mode-checkbox game-mode_3').onclick = function () {
+    openSkins();
+    chooseMode = "pvp";
+}
+document.getElementById('game-mode-checkbox game-mode_4').onclick = function () {
+    openSkins();
+    chooseMode = "timeout";
+}
