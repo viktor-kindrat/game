@@ -103,7 +103,7 @@
                     <div class="skins__skin skins__skin11" id="player1 skin-id11"></div>
                     <div class="skins__skin skins__skin12" id="player1 skin-id12"></div>
                 </div>
-                <span class="player__information-group"><input placeholder="Player 1" type="text" id="player-1-name" class="players__input"><button type="button" id="player-1-ready" class="players__ready-btn"> </span>
+                <span class="player__information-group"><input placeholder="Player 1" type="text" id="player1-name-inp" class="players__input"><button type="button" id="player-1-ready" class="players__ready-btn"></button> </span>
             </div>
             <div class="skins__player skins__player2">
                 <div class="skins__choose-skin">
@@ -120,7 +120,7 @@
                     <div class="skins__skin skins__skin11" id="player2 skin-id11"></div>
                     <div class="skins__skin skins__skin12" id="player2 skin-id12"></div>
                 </div>
-                <span class="player__information-group"><input placeholder="Player 2" type="text" id="player-2-name" class="players__input" placeholder=""><button type="button" id="player-2-ready" class="players__ready-btn"> </span>
+                <span class="player__information-group"><input placeholder="Player 2" type="text" id="player2-name-inp" class="players__input" placeholder=""><button type="button" id="player-2-ready" class="players__ready-btn"></button> </span>
             </div>
         </div>
     </section>
@@ -130,8 +130,14 @@
 
     <main class="pvp-mode-wrap" id='pvp-mode-wrap'>
         <div class="score">
-            <div class="score__score1" id="score1">0</div>
-            <div class="score__score2" id="score2">0</div>
+            <div class="score__score1">
+                <span class="score__score" id="score1">0</span>
+                <span class="score__player-name" id="player1-name">player yellow</span>
+            </div>
+            <div class="score__score2">
+                <span class="score__score" id="score2">0</span>
+                <span class="score__player-name" id="player2-name">player green</span>
+            </div>
         </div>
         <div class="player player1" id="player1"></div>
         <div class="player player2" id="player2"></div>

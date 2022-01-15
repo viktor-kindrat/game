@@ -145,7 +145,7 @@ let PVPStart = () => {
     } else {
         document.body.onkeyup = function() {}
     }
-}
+};
 
 document.getElementById("main-wrap").onfocus = function () {
     document.getElementById("audio1").play();
@@ -233,6 +233,8 @@ document.getElementById("player-1-ready").onclick = function () {
             alert("Mode in development! Deploy is planed for 16.01.2022 to 31.01.2022")
         } else if (chooseMode === "pvp"){
             PVPStart();
+            document.getElementById("player1-name").innerHTML = document.getElementById("player1-name-inp").value;
+            document.getElementById("player2-name").innerHTML = document.getElementById("player2-name-inp").value;
         } else if (chooseMode === "timeout") {
             alert("Mode in development! Deploy is planed for 16.01.2022 to 31.01.2022")
         }
@@ -242,16 +244,16 @@ document.getElementById("player-1-ready").onclick = function () {
 document.getElementById("player-2-ready").onclick = function () {
     IsReadyPlayer2 = true;
     changeCheckboxStatus("player-2-ready");
-    if (IsReadyPlayer1 === true && IsReadyPlayer2 === true) {
-        if (chooseMode === "normal") {
-            alert("Mode in development! Deploy is planed for 16.01.2022 to 31.01.2022")
-        } else if (chooseMode === "pac-man"){
-            alert("Mode in development! Deploy is planed for 16.01.2022 to 31.01.2022")
-        } else if (chooseMode === "pvp"){
-            PVPStart();
-        } else if (chooseMode === "timeout") {
-            alert("Mode in development! Deploy is planed for 16.01.2022 to 31.01.2022")
-        }
+    if (chooseMode === "normal") {
+        alert("Mode in development! Deploy is planed for 16.01.2022 to 31.01.2022")
+    } else if (chooseMode === "pac-man"){
+        alert("Mode in development! Deploy is planed for 16.01.2022 to 31.01.2022")
+    } else if (chooseMode === "pvp"){
+        PVPStart();
+        document.getElementById("player1-name").innerHTML = document.getElementById("player1-name-inp").value;
+        document.getElementById("player2-name").innerHTML = document.getElementById("player2-name-inp").value;
+    } else if (chooseMode === "timeout") {
+        alert("Mode in development! Deploy is planed for 16.01.2022 to 31.01.2022")
     }
 }
 
