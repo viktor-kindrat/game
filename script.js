@@ -12,6 +12,7 @@ target.style.left = leftPosT + '%';
 let IsReadyPlayer1 = false;
 let IsReadyPlayer2 = false;
 let chooseMode = "";
+let pos = 3;
 
 document.getElementById('audio1').volume = 0.3;
 
@@ -275,4 +276,71 @@ document.getElementById('game-mode-checkbox game-mode_3').onclick = function() {
 document.getElementById('game-mode-checkbox game-mode_4').onclick = function() {
     openSkins();
     chooseMode = "timeout";
+}
+
+// function dotesPick(){
+//     if (pos == 0) {
+//         dote3.style.background = '#fff';
+//         dote1.style.background = '#606060';
+//         dote2.style.background = '#606060';
+//         dote4.style.background = '#606060';
+//         dote5.style.background = '#606060';
+//     } else if (pos == 900) {
+//         dote4.style.background = '#fff';
+//         dote1.style.background = '#606060';
+//         dote2.style.background = '#606060';
+//         dote3.style.background = '#606060';
+//         dote5.style.background = '#606060';
+//     } else if (pos == 1800) {
+//         dote5.style.background = '#fff';
+//         dote1.style.background = '#606060';
+//         dote2.style.background = '#606060';
+//         dote3.style.background = '#606060';
+//         dote4.style.background = '#606060';
+//     } else if (pos == -1800) {
+//         dote1.style.background = '#fff';
+//         dote4.style.background = '#606060';
+//         dote2.style.background = '#606060';
+//         dote3.style.background = '#606060';
+//         dote5.style.background = '#606060';
+//     } else if (pos == -900) {
+//         dote2.style.background = '#fff';
+//         dote1.style.background = '#606060';
+//         dote4.style.background = '#606060';
+//         dote3.style.background = '#606060';
+//         dote5.style.background = '#606060';
+//     }
+// }
+change__previous.onclick = function() {
+        if (pos === 1) {
+            document.getElementById("game-mode__cards").style.left = 'calc((-90vw + 230px) + (33px / 2))';
+            pos = 4;
+        } else if (pos === 2) {
+            document.getElementById("game-mode__cards").style.left = 'calc((90vw - 230px) - (33px / 2))';
+            pos = 1;
+        } else if (pos === 3) {
+            document.getElementById("game-mode__cards").style.left = 'calc((30vw - 100px) + (33px / 2))';
+            pos = 2;
+        } else if (pos === 4) {
+            document.getElementById("game-mode__cards").style.left = 'calc((-60vw + 200px - 33px) / 2)';
+            pos = 3;
+        }
+    }
+    // dotesPick()
+
+change__next.onclick = function() {
+    if (pos === 1) {
+        document.getElementById("game-mode__cards").style.left = 'calc((30vw - 100px) + (33px / 2))';
+        pos = 2;
+    } else if (pos === 2) {
+        document.getElementById("game-mode__cards").style.left = 'calc((-60vw + 200px - 33px) / 2)';
+        pos = 3;
+    } else if (pos === 3) {
+        document.getElementById("game-mode__cards").style.left = 'calc((-90vw + 230px) + (33px / 2))';
+        pos = 4;
+    } else if (pos === 4) {
+        document.getElementById("game-mode__cards").style.left = 'calc((90vw - 230px) - (33px / 2))';
+        pos = 1;
+    }
+    // dotesPick()
 }
