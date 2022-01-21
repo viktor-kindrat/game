@@ -25,7 +25,8 @@
         <audio autoplay loop id="audio1">
             <source src="background-sound.mp3" type="audio/ogg">
         </audio>
-        <button type="button" class="main__settings" id="main__settings"><img src="./btns-set/settings.svg" alt="⚙Sets"></button>
+        <button type="button" class="main__settings" id="main__settings"><img src="./btns-set/settings.svg"
+                alt="⚙Sets"></button>
         <div class="main__text-group">
             <h1 class="main__headline">Catch the circle!</h1>
             <p class="main__description">
@@ -37,14 +38,17 @@
 
     <!--    settings-->
 
-    <button type="button" class="main__settings__sets" id="main__settings_sets"><img src="./btns-set/settings.svg" alt="⚙Sets"></button>
+    <button type="button" class="main__settings__sets" id="main__settings_sets"><img src="./btns-set/settings.svg"
+            alt="⚙Sets"></button>
     <div class="settings-frame" id="settings-frame">
         <div class="settings__inner" id="settings__inner">
             <h2 class="settings__headline">Settings:</h2>
             <div class="language-change">
-                <button type="button" class="language-change__left"><img class="imgg" src="./btns-set/left.svg" alt="&leftarrow;"></button>
+                <button type="button" class="language-change__left"><img class="imgg" src="./btns-set/left.svg"
+                        alt="&leftarrow;"></button>
                 <div class="language-change__flag"></div>
-                <button type="button" class="language-change__right"><img class="imgg" src="./btns-set/right.svg" alt="&rightarrow;"></button>
+                <button type="button" class="language-change__right"><img class="imgg" src="./btns-set/right.svg"
+                        alt="&rightarrow;"></button>
             </div>
 
             <div class="volume-change">
@@ -72,7 +76,7 @@
 
             <h2 class="game-mode__headline">Choose the game mode:</h2>
             <div class="game-mode__cards" id="game-mode__cards">
-                <div class="game-mode__card" id="game-mode-checkbox game-mode_1">
+                <div class="game-mode__card" id="game-mode_1">
                     <img src="./game-mode-sets/normal.svg" alt="normal-mode" class="game-mode__image">
                     <div class="game-mode__text">
                         <p class="game-mode__name">Normal</p>
@@ -81,7 +85,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="game-mode__card" id="game-mode-checkbox game-mode_2">
+                <div class="game-mode__card" id="game-mode_2">
                     <img src="./game-mode-sets/pacman.svg" alt="pac-man-mode" class="game-mode__image">
                     <div class="game-mode__text">
                         <p class="game-mode__name">Pac-man</p>
@@ -90,7 +94,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="game-mode__card" id="game-mode-checkbox game-mode_3">
+                <div class="game-mode__card" id="game-mode_3">
                     <img src="./game-mode-sets/pvp.svg" alt="pvp-mode" class="game-mode__image">
                     <div class="game-mode__text">
                         <p class="game-mode__name">PVP</p>
@@ -99,7 +103,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="game-mode__card" id="game-mode-checkbox game-mode_4">
+                <div class="game-mode__card" id="game-mode_4">
                     <img src="./game-mode-sets/timeout.svg" alt="timeout-mode" class="game-mode__image">
                     <div class="game-mode__text">
                         <p class="game-mode__name">Timeout</p>
@@ -111,6 +115,13 @@
             </div>
 
             <div class="game-mode__change game-mode__change2" id="change__next"></div>
+
+            <div class="game-mode__change-circles" id="game-mode__change-circles">
+                <div class="game-mode__circle" id="gm-circle1"></div>
+                <div class="game-mode__circle" id="gm-circle2"></div>
+                <div class="game-mode__circle" id="gm-circle3"></div>
+                <div class="game-mode__circle" id="gm-circle4"></div>
+            </div>
 
         </section>
         <section class="game-mode__inner-skins" id="game-mode__inner-skins">
@@ -131,7 +142,9 @@
                         <div class="skins__skin skins__skin11" id="player1 skin-id11"></div>
                         <div class="skins__skin skins__skin12" id="player1 skin-id12"></div>
                     </div>
-                    <span class="player__information-group"><input placeholder="Player 1" type="text" id="player1-name-inp" class="players__input"><button type="button" id="player-1-ready" class="players__ready-btn"></button> </span>
+                    <span class="player__information-group"><input placeholder="Player 1" type="text"
+                            id="player1-name-inp" class="players__input"><button type="button" id="player-1-ready"
+                            class="players__ready-btn"></button> </span>
                 </div>
                 <div class="skins__player skins__player2">
                     <div class="skins__choose-skin">
@@ -148,7 +161,9 @@
                         <div class="skins__skin skins__skin11" id="player2 skin-id11"></div>
                         <div class="skins__skin skins__skin12" id="player2 skin-id12"></div>
                     </div>
-                    <span class="player__information-group"><input placeholder="Player 2" type="text" id="player2-name-inp" class="players__input" placeholder=""><button type="button" id="player-2-ready" class="players__ready-btn"></button> </span>
+                    <span class="player__information-group"><input placeholder="Player 2" type="text"
+                            id="player2-name-inp" class="players__input" placeholder=""><button type="button"
+                            id="player-2-ready" class="players__ready-btn"></button> </span>
                 </div>
             </div>
         </section>

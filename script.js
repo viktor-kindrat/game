@@ -186,46 +186,51 @@ document.getElementById('main__btn').onclick = function() {
     }, 550)
 };
 
-document.getElementById('main-wrap').onmousemove = function() {
+$('#main-wrap').mousemove(function() {
     document.getElementById('audio1').play();
-};
+})
 
-document.getElementById("main__settings").onclick = function() {
-    document.getElementById("main-wrap").style.transition = '0.3s';
-    document.getElementById("main-wrap").style.filter = 'blur(10px)';
-    document.getElementById("main__settings_sets").style.display = 'block';
-    document.getElementById("settings-frame").style.display = 'flex';
-    document.getElementById("settings-frame").style.animation = 'menu-show 1s 1';
-    document.getElementById("main__settings").style.display = 'none';
+$('#main__settings').click(function() {
+    $('#main-wrap').css({
+        "transition": '0.3s',
+        "filter": 'blur(10px)',
+    });
+    $('#main__settings_sets').css('display', 'block');
+    $('#main__settings').css('dispaly', 'none');
+    $('#settings-frame').css({
+        'display': 'flex',
+        'animation': 'menu-show 1s 1'
+    });
     setTimeout(function() {
-        document.getElementById("settings__inner").style.display = 'flex';
-        document.getElementById("settings-frame").style.animation = '';
+        $("#settings__inner").css('display', 'flex');
+        $("#settings-frame").css('animation', '');
     }, 990)
-};
+})
 
-document.getElementById("main__settings_sets").onclick = function() {
-    document.getElementById("main__settings_sets").style.display = 'none';
-    document.getElementById("main__settings").style.display = 'flex';
-    document.getElementById("settings-frame").style.animation = 'menu-hide 1s 1';
-    document.getElementById("settings__inner").style.display = 'none';
-    document.getElementById("main__settings").style.display = 'flex';
+$('#main__settings_sets').click(function() {
+    $('#main__settings_sets').css('display', 'none');
+    $('#main__settings').css('display', 'flex');
+    $('#settings-frame').css('animation', 'menu-hide 1s 1');
+    $('#settings__inner').css('display', 'none');
     setTimeout(function() {
-        document.getElementById("settings-frame").style.animation = '';
-        document.getElementById("main-wrap").style.filter = 'blur(0)';
-        document.getElementById("settings-frame").style.display = 'none';
+        $('#settings-frame').css({
+            'animation': '',
+            'display': 'none',
+        });
+        $('#main-wrap').css('filter', 'blur(0)');
     }, 990)
-};
+});
 
 let openSkins = () => {
-    document.getElementById("game-mode__inner").style.display = 'none';
-    document.getElementById("game-mode__inner-skins").style.display = 'flex';
-}
+    $('#game-mode__inner').css('display', 'none');
+    $('#game-mode__inner-skins').css('display', 'flex');
+};
 
 let changeCheckboxStatus = (checkboxId) => {
-    document.getElementById(checkboxId).style.backgroundImage = "url(./btns-set/ready.svg)"
-}
+    $('#' + checkboxId).css('backgroundImage', 'url(./btns-set/ready.svg)')
+};
 
-document.getElementById("player-1-ready").onclick = function() {
+$('#player-1-ready').click(function() {
     IsReadyPlayer1 = true;
     changeCheckboxStatus("player-1-ready");
     if (IsReadyPlayer1 === true && IsReadyPlayer2 === true) {
@@ -235,15 +240,15 @@ document.getElementById("player-1-ready").onclick = function() {
             alert("Mode in development! Deploy is planed for 16.01.2022 to 31.01.2022")
         } else if (chooseMode === "pvp") {
             PVPStart();
-            document.getElementById("player1-name").innerHTML = document.getElementById("player1-name-inp").value;
-            document.getElementById("player2-name").innerHTML = document.getElementById("player2-name-inp").value;
+            $('#player-1-name').html($('#player1-name-inp').val());
+            $('#player-2-name').html($('#player2-name-inp').val());
         } else if (chooseMode === "timeout") {
             alert("Mode in development! Deploy is planed for 16.01.2022 to 31.01.2022")
         }
     }
-}
+});
 
-document.getElementById("player-2-ready").onclick = function() {
+$('#player-2-ready').click(function() {
     IsReadyPlayer2 = true;
     changeCheckboxStatus("player-2-ready");
     if (IsReadyPlayer1 === true && IsReadyPlayer2 === true) {
@@ -253,30 +258,30 @@ document.getElementById("player-2-ready").onclick = function() {
             alert("Mode in development! Deploy is planed for 16.01.2022 to 31.01.2022")
         } else if (chooseMode === "pvp") {
             PVPStart();
-            document.getElementById("player1-name").innerHTML = document.getElementById("player1-name-inp").value;
-            document.getElementById("player2-name").innerHTML = document.getElementById("player2-name-inp").value;
+            $('#player-1-name').html($('#player1-name-inp').val());
+            $('#player-2-name').html($('#player2-name-inp').val());
         } else if (chooseMode === "timeout") {
             alert("Mode in development! Deploy is planed for 16.01.2022 to 31.01.2022")
         }
     }
-}
+});
 
-document.getElementById('game-mode-checkbox game-mode_1').onclick = function() {
+$('#game-mode_1').click(function() {
     openSkins();
     chooseMode = "normal";
-}
-document.getElementById('game-mode-checkbox game-mode_2').onclick = function() {
+});
+$('#game-mode_2').click(function() {
     openSkins();
     chooseMode = "pac-man";
-}
-document.getElementById('game-mode-checkbox game-mode_3').onclick = function() {
+});
+$('#game-mode_3').click(function() {
     openSkins();
     chooseMode = "pvp";
-}
-document.getElementById('game-mode-checkbox game-mode_4').onclick = function() {
+});
+$('#game-mode_4').click(function() {
     openSkins();
     chooseMode = "timeout";
-}
+});
 
 // function dotesPick(){
 //     if (pos == 0) {
@@ -311,36 +316,35 @@ document.getElementById('game-mode-checkbox game-mode_4').onclick = function() {
 //         dote5.style.background = '#606060';
 //     }
 // }
-change__previous.onclick = function() {
-        if (pos === 1) {
-            document.getElementById("game-mode__cards").style.left = 'calc((-90vw + 230px) + (33px / 2))';
-            pos = 4;
-        } else if (pos === 2) {
-            document.getElementById("game-mode__cards").style.left = 'calc((90vw - 230px) - (33px / 2))';
-            pos = 1;
-        } else if (pos === 3) {
-            document.getElementById("game-mode__cards").style.left = 'calc((30vw - 100px) + (33px / 2))';
-            pos = 2;
-        } else if (pos === 4) {
-            document.getElementById("game-mode__cards").style.left = 'calc((-60vw + 200px - 33px) / 2)';
-            pos = 3;
-        }
-    }
-    // dotesPick()
-
-change__next.onclick = function() {
+$('#change__previous').click(function() {
     if (pos === 1) {
-        document.getElementById("game-mode__cards").style.left = 'calc((30vw - 100px) + (33px / 2))';
+        $('#game-mode__cards').css('left', 'calc((-90vw + 230px) + (33px / 2))');
+        pos = 4;
+    } else if (pos === 2) {
+        $('#game-mode__cards').css('left', 'calc((90vw - 230px) - (33px / 2))');
+        pos = 1;
+    } else if (pos === 3) {
+        $('#game-mode__cards').css('left', 'calc((30vw - 100px) + (33px / 2))');
+        pos = 2;
+    } else if (pos === 4) {
+        $('#game-mode__cards').css('left', 'calc((-60vw + 200px - 33px) / 2)');
+        pos = 3;
+    }
+});
+
+$('#change__next').click(function() {
+    if (pos === 1) {
+        $('#game-mode__cards').css('left', 'calc((30vw - 100px) + (33px / 2))');
         pos = 2;
     } else if (pos === 2) {
-        document.getElementById("game-mode__cards").style.left = 'calc((-60vw + 200px - 33px) / 2)';
+        $('#game-mode__cards').css('left', 'calc((-60vw + 200px - 33px) / 2)');
         pos = 3;
     } else if (pos === 3) {
-        document.getElementById("game-mode__cards").style.left = 'calc((-90vw + 230px) + (33px / 2))';
+        $('#game-mode__cards').css('left', 'calc((-90vw + 230px) + (33px / 2))');
         pos = 4;
     } else if (pos === 4) {
-        document.getElementById("game-mode__cards").style.left = 'calc((90vw - 230px) - (33px / 2))';
+        $('#game-mode__cards').css('left', 'calc((90vw - 230px) - (33px / 2))');
         pos = 1;
     }
     // dotesPick()
-}
+});
