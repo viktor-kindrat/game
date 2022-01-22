@@ -39,6 +39,7 @@ let checker = () => {
 
 let PVPStart = () => {
     play = true;
+    $('#game-mode__close-btn').css('display', 'none');
     document.getElementById("main-wrap").style.display = 'none';
     document.getElementById("game-mode").style.display = 'none';
     document.getElementById("pvp-mode-wrap").style.display = 'block';
