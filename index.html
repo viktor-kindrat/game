@@ -25,7 +25,7 @@
         <audio autoplay loop id="audio1">
             <source src="background-sound.mp3" type="audio/ogg">
         </audio>
-        <button type="button" class="main__settings" id="main__settings"><img src="./btns-set/settings.svg"
+        <button type="button" class="main__settings" id="main__settings"><img id="imgofsettings" src="./btns-set/settings.svg"
                 alt="⚙Sets"></button>
         <div class="main__text-group">
             <h1 class="main__headline">Catch the circle!</h1>
@@ -69,7 +69,9 @@
 
     <!--    choose game-mode-->
 
+    <button class="game-mode__close-btn" id="game-mode__close-btn"></button>
     <div class="game-mode-frame" id="game-mode">
+
         <section class="game-mode__inner" id="game-mode__inner" style="display: none">
 
             <div class="game-mode__change game-mode__change1" id="change__previous"></div>

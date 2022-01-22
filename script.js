@@ -162,29 +162,38 @@ document.getElementById('customRange1 music-volume').onchange = function() {
     document.getElementById('audio1').volume = document.getElementById('customRange1 music-volume').value / 100;
 };
 
-document.getElementById('main__btn').onclick = function() {
-    document.getElementById('main__btn').style.animation = 'btnclick .5s 1';
-    let x = setTimeout(function() {
-        document.getElementById("main-wrap").style.filter = 'blur(10px)'
-        document.getElementById("game-mode").style.display = 'flex';
-        document.getElementById("game-mode").style.animation = 'game-mode 1s 1';
-        setTimeout(function() {
-            document.getElementById("game-mode__inner").style.display = 'flex';
-            document.getElementById("main-wrap").onclick = function() {
-                document.getElementById("game-mode__inner").style.display = 'none';
-                document.getElementById("game-mode__inner-skins").style.display = 'none';
-                document.getElementById("game-mode").style.animation = 'game-mode-hide 1s 1';
-                setTimeout(function() {
-                    document.getElementById("game-mode").style.display = 'none';
-                    document.getElementById("main-wrap").style.filter = 'blur(0px)'
-                    document.getElementById("game-mode").style.animation = '';
-                    document.getElementById("main-wrap").onclick = function() {};
-                }, 999)
-            }
-        }, 999)
-        document.getElementById('main__btn').style.animation = 'none';
+$('#main__btn').click(function() { //click on main btn
+    $('#main__btn').css('animation', 'btnclick .5s 1') //animation fo click
+    setTimeout(function() { //timeout for animation
+        $('#main__btn').css('animation', ''); //clear main-btn animation
+        $('#game-mode').css({
+            'display': 'flex',
+            'animation': 'game-mode 1s 1'
+        }); //show game mode menu and set animation of opening
+        $('#main-wrap').css('filter', 'blur(10px)'); //bluring main
     }, 550)
-};
+    setTimeout(function() {
+        $('#main__settings').css('display', 'none');
+        $('#game-mode__inner').css('display', 'flex'); //show game mode inner content
+        $('#game-mode').css('animation', '') //clear animation
+        $('#game-mode__close-btn').css('display', 'block');
+    }, 1549);
+});
+
+$('#game-mode__close-btn').click(function() { // setting of closing function
+    $("#game-mode__inner").css('display', 'none');
+    $("#game-mode__inner-skins").css('display', 'none');
+    $("#game-mode").css('animation', 'game-mode-hide 1s 1');
+    setTimeout(function() {
+        $('#game-mode').css({
+            'display': 'none',
+            'animation': ''
+        });
+        $('#game-mode__close-btn').css('display', 'none');
+        $('#main__settings').css('display', 'flex');
+        $('#main-wrap').css('filter', 'blur(0px)');
+    }, 999)
+})
 
 $('#main-wrap').mousemove(function() {
     document.getElementById('audio1').play();
