@@ -292,39 +292,11 @@ $('#game-mode_4').click(function() {
     chooseMode = "timeout";
 });
 
-// function dotesPick(){
-//     if (pos == 0) {
-//         dote3.style.background = '#fff';
-//         dote1.style.background = '#606060';
-//         dote2.style.background = '#606060';
-//         dote4.style.background = '#606060';
-//         dote5.style.background = '#606060';
-//     } else if (pos == 900) {
-//         dote4.style.background = '#fff';
-//         dote1.style.background = '#606060';
-//         dote2.style.background = '#606060';
-//         dote3.style.background = '#606060';
-//         dote5.style.background = '#606060';
-//     } else if (pos == 1800) {
-//         dote5.style.background = '#fff';
-//         dote1.style.background = '#606060';
-//         dote2.style.background = '#606060';
-//         dote3.style.background = '#606060';
-//         dote4.style.background = '#606060';
-//     } else if (pos == -1800) {
-//         dote1.style.background = '#fff';
-//         dote4.style.background = '#606060';
-//         dote2.style.background = '#606060';
-//         dote3.style.background = '#606060';
-//         dote5.style.background = '#606060';
-//     } else if (pos == -900) {
-//         dote2.style.background = '#fff';
-//         dote1.style.background = '#606060';
-//         dote4.style.background = '#606060';
-//         dote3.style.background = '#606060';
-//         dote5.style.background = '#606060';
-//     }
-// }
+let dotesPick = () => {
+    $('.game-mode__circle').css('opacity', '0.6');
+    $('#gm-circle' + pos).css('opacity', '1');
+}
+
 $('#change__previous').click(function() {
     if (pos === 1) {
         $('#game-mode__cards').css('left', 'calc((-90vw + 230px) + (33px / 2))');
@@ -339,6 +311,7 @@ $('#change__previous').click(function() {
         $('#game-mode__cards').css('left', 'calc((-60vw + 200px - 33px) / 2)');
         pos = 3;
     }
+    dotesPick();
 });
 
 $('#change__next').click(function() {
@@ -355,5 +328,5 @@ $('#change__next').click(function() {
         $('#game-mode__cards').css('left', 'calc((90vw - 230px) - (33px / 2))');
         pos = 1;
     }
-    // dotesPick()
+    dotesPick();
 });

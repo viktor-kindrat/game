@@ -340,7 +340,7 @@ p {
     height: 100%;
     display: none;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-around;
     column-gap: 33px;
     flex-direction: column;
 }
@@ -420,6 +420,30 @@ p {
     position: fixed;
     cursor: pointer;
     filter: drop-shadow(0 0 10px #0000008a);
+}
+
+.game-mode__change-circles {
+    height: 10px;
+    width: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+    margin-top: 20px;
+}
+
+.game-mode__circle {
+    width: 10px;
+    height: 10px;
+    background: #ffffff;
+    opacity: 0.6;
+    border-radius: 50%;
+    transition: 0.3s linear;
+}
+
+.game-mode__circle:nth-child(3) {
+    opacity: 1;
 }
 
 .game-mode__change1 {
