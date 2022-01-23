@@ -206,12 +206,13 @@ $('#main__settings').click(function() {
         "filter": 'blur(10px)',
     });
     $('#main__settings_sets').css('display', 'block');
-    $('#main__settings').css('dispaly', 'none');
+    // $('#main__settings').css('dispaly', 'none');
     $('#settings-frame').css({
         'display': 'flex',
         'animation': 'menu-show 1s 1'
     });
     setTimeout(function() {
+        $('#main__settings').css('display', 'none');
         $("#settings__inner").css('display', 'flex');
         $("#settings-frame").css('animation', '');
     }, 990)
@@ -228,6 +229,7 @@ $('#main__settings_sets').click(function() {
             'display': 'none',
         });
         $('#main-wrap').css('filter', 'blur(0)');
+        $('#main__settings').css('display', 'flex');
     }, 990)
 });
 
