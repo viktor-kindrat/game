@@ -71,7 +71,8 @@ p {
 }
 
 .main__headline {
-    height: calc(100px + 3vw + 1vh);
+    width: 100%;
+    height: calc(130px + 4vw + 2vh);
     font-size: calc(60px + 3vw + 1vh);
     line-height: calc(60px + 3vw + 1vh);
     font-weight: 500;
@@ -79,7 +80,7 @@ p {
     align-items: center;
     justify-content: center;
     position: relative;
-    right: -150px;
+    right: -145px;
 }
 
 .headline-after {
@@ -88,8 +89,8 @@ p {
     font-size: 14px;
     font-family: 'Press Start 2P', cursive;
     position: relative;
-    top: -100px;
-    left: -150px;
+    top: -120px;
+    left: -145px;
     line-height: 15px;
     color: #F1CE52;
     letter-spacing: 1px;
