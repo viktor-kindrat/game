@@ -15,6 +15,7 @@ let chooseMode = "";
 let pos = 3;
 
 document.getElementById('audio1').volume = 0.3;
+document.getElementById("btnSound").volume = 0.2;
 
 let setNewTargetPos = function() {
     topPosT = Math.floor(Math.random() * (95 - 5) + 5);
@@ -27,10 +28,14 @@ let setNewTargetPos = function() {
 
 let checker = () => {
     if (topPos1 === topPosT && leftPos1 === leftPosT) {
+        document.getElementById("btnSound").src = './sounds/catching-ball-sound.wav';
+        document.getElementById("btnSound").play();
         setNewTargetPos();
         scoreOf1++;
         score1.innerText = scoreOf1;
     } else if (topPos2 === topPosT && leftPos2 === leftPosT) {
+        document.getElementById("btnSound").src = './sounds/catching-ball-sound.wav';
+        document.getElementById("btnSound").play();
         setNewTargetPos();
         scoreOf2++;
         score2.innerText = scoreOf2;
@@ -38,6 +43,8 @@ let checker = () => {
 };
 
 let PVPStart = () => {
+    document.getElementById("audio1").src = './sounds/pvp-bg-sound.mp3';
+    document.getElementById("audio1").play();
     play = true;
     $('#game-mode__close-btn').css('display', 'none');
     document.getElementById("main-wrap").style.display = 'none';
@@ -45,6 +52,8 @@ let PVPStart = () => {
     document.getElementById("pvp-mode-wrap").style.display = 'block';
     if (play === true) {
         document.body.onkeyup = function(e) {
+            document.getElementById("btnSound").src = './sounds/jump-sound.wav';
+            document.getElementById("btnSound").play();
             if (e.keyCode === 38) {
                 topPos1--;
                 if (topPos1 <= 5) {
@@ -163,7 +172,15 @@ document.getElementById('customRange1 music-volume').onchange = function() {
     document.getElementById('audio1').volume = document.getElementById('customRange1 music-volume').value / 100;
 };
 
+document.getElementById('customRange1 sounds-volume').onchange = function() {
+    document.getElementById('btnSound').volume = document.getElementById('customRange1 sounds-volume').value / 100;
+    document.getElementById("btnSound").src = './sounds/go-home.mp3';
+    document.getElementById("btnSound").play();
+};
+
 $('#main__btn').click(function() { //click on main btn
+    document.getElementById("btnSound").src = './sounds/go-home.mp3';
+    document.getElementById("btnSound").play();
     $('#main__btn').css('animation', 'btnclick .5s 1') //animation fo click
     setTimeout(function() { //timeout for animation
         $('#main__btn').css('animation', ''); //clear main-btn animation
@@ -182,6 +199,8 @@ $('#main__btn').click(function() { //click on main btn
 });
 
 $('#game-mode__close-btn').click(function() { // setting of closing function
+    document.getElementById("btnSound").src = './sounds/go-home.mp3';
+    document.getElementById("btnSound").play();
     $("#game-mode__inner").css('display', 'none');
     $("#game-mode__inner-skins").css('display', 'none');
     $("#game-mode").css('animation', 'game-mode-hide 1s 1');
@@ -201,6 +220,8 @@ $('#main-wrap').mousemove(function() {
 })
 
 $('#main__settings').click(function() {
+    document.getElementById("btnSound").src = './sounds/go-home.mp3';
+    document.getElementById("btnSound").play();
     $('#main-wrap').css({
         "transition": '0.3s',
         "filter": 'blur(10px)',
@@ -219,6 +240,8 @@ $('#main__settings').click(function() {
 })
 
 $('#main__settings_sets').click(function() {
+    document.getElementById("btnSound").src = './sounds/go-home.mp3';
+    document.getElementById("btnSound").play();
     $('#main__settings_sets').css('display', 'none');
     $('#main__settings').css('display', 'flex');
     $('#settings-frame').css('animation', 'menu-hide 1s 1');
@@ -239,10 +262,12 @@ let openSkins = () => {
 };
 
 let changeCheckboxStatus = (checkboxId) => {
-    $('#' + checkboxId).css('backgroundImage', 'url(./btns-set/ready.svg)')
+    $('#' + checkboxId).css('backgroundImage', 'url(./btns-set/ready.svg)');
 };
 
 $('#player-1-ready').click(function() {
+    document.getElementById("btnSound").src = './sounds/switchGmSound.mp3';
+    document.getElementById("btnSound").play();
     IsReadyPlayer1 = true;
     changeCheckboxStatus("player-1-ready");
     if (IsReadyPlayer1 === true && IsReadyPlayer2 === true) {
@@ -261,6 +286,8 @@ $('#player-1-ready').click(function() {
 });
 
 $('#player-2-ready').click(function() {
+    document.getElementById("btnSound").src = './sounds/switchGmSound.mp3';
+    document.getElementById("btnSound").play();
     IsReadyPlayer2 = true;
     changeCheckboxStatus("player-2-ready");
     if (IsReadyPlayer1 === true && IsReadyPlayer2 === true) {
@@ -279,18 +306,26 @@ $('#player-2-ready').click(function() {
 });
 
 $('#game-mode_1').click(function() {
+    document.getElementById("btnSound").src = './sounds/game-mode-choose-sound.wav';
+    document.getElementById("btnSound").play();
     openSkins();
     chooseMode = "normal";
 });
 $('#game-mode_2').click(function() {
+    document.getElementById("btnSound").src = './sounds/game-mode-choose-sound.wav';
+    document.getElementById("btnSound").play();
     openSkins();
     chooseMode = "pac-man";
 });
 $('#game-mode_3').click(function() {
+    document.getElementById("btnSound").src = './sounds/game-mode-choose-sound.wav';
+    document.getElementById("btnSound").play();
     openSkins();
     chooseMode = "pvp";
 });
 $('#game-mode_4').click(function() {
+    document.getElementById("btnSound").src = './sounds/game-mode-choose-sound.wav';
+    document.getElementById("btnSound").play();
     openSkins();
     chooseMode = "timeout";
 });
@@ -315,6 +350,8 @@ $('#change__previous').click(function() {
         pos = 3;
     }
     dotesPick();
+    document.getElementById("btnSound").src = './sounds/switchGmSound.mp3';
+    document.getElementById("btnSound").play();
 });
 
 $('#change__next').click(function() {
@@ -332,4 +369,6 @@ $('#change__next').click(function() {
         pos = 1;
     }
     dotesPick();
+    document.getElementById("btnSound").src = './sounds/switchGmSound.mp3';
+    document.getElementById("btnSound").play();
 });

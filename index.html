@@ -25,9 +25,14 @@
     <!--    main wrap-->
 
     <main class="main-wrap" id="main-wrap">
-        <audio autoplay loop id="audio1">
+        <audio autoplay loop id="audio1" class="music">
             <source src="background-sound.mp3" type="audio/ogg">
         </audio>
+
+        <audio id="btnSound" class="sounds">
+            <source src="./sounds/go-home.mp3" type="audio/ogg">
+        </audio>
+
         <button type="button" class="main__settings" id="main__settings"><img id="imgofsettings" src="./btns-set/settings.svg"
                 alt="⚙Sets"></button>
         <div class="main__text-group">
@@ -63,7 +68,7 @@
                     </div>
                     <div class="volume-change__group">
                         <div class="volume-change__description">Sounds</div>
-                        <input min="0" max="100" value="50" type="range" class="form-range volume" id="customRange1 sounds-volume">
+                        <input min="0" max="100" value="20" type="range" class="form-range volume" id="customRange1 sounds-volume">
                     </div>
                 </div>
             </div>
