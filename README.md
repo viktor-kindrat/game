@@ -1,8 +1,8 @@
-# Paint pictures
-Paint custom version made useing JS canvas 🎨
+# Infiniti games
+Play to your heart's content! ♥
 ---
 
-JS project. Сustom copy of all known paint for PCs and smartphones designed with JS canvas.
+JS project. The project is a site with 4 game modes, with the ability to play to infinity. One of my first JS projects. You can hail both alone and with your friends
 
 ---
 ### Features: 
