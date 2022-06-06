@@ -34,7 +34,6 @@ JS project. The project is a site with 4 game modes, with the ability to play to
 
 ---
 
----
 [Open](https://victor-kindrat.github.io/game/)
 
 
