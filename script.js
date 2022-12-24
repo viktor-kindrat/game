@@ -277,8 +277,8 @@ $('#player-1-ready').click(function () {
             alert("Not yet))");
         } else if (chooseMode === "pvp") {
             PVPStart();
-            $('#player-1-name').html($('#player1-name-inp').val());
-            $('#player-2-name').html($('#player2-name-inp').val());
+            $('#player1-name').html($('#player1-name-inp').val());
+            $('#player2-name').html($('#player2-name-inp').val());
         } else if (chooseMode === "timeout") {
             alert("Not yet))");
         }
@@ -297,8 +297,8 @@ $('#player-2-ready').click(function () {
             alert("Mode in development! Deploy is planed for 16.01.2022 to 31.01.2022")
         } else if (chooseMode === "pvp") {
             PVPStart();
-            $('#player-1-name').html($('#player1-name-inp').val());
-            $('#player-2-name').html($('#player2-name-inp').val());
+            $('#player1-name').html($('#player1-name-inp').val());
+            $('#player2-name').html($('#player2-name-inp').val());
         } else if (chooseMode === "timeout") {
             alert("Mode in development! Deploy is planed for 16.01.2022 to 31.01.2022")
         }
